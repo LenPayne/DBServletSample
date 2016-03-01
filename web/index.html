@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>DB Servlet Sample</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="http://code.jquery.com/jquery.min.js"></script>
+        <script>
+            function getAll() {
+                $.ajax({
+                    url: "/DBServletSample/product",
+                    method: "GET",
+                    success: function (data) {
+                        $('#output').html(data);
+                    }
+                })
+            }
+            $(document).ready(function () {
+                getAll();
+            });
+        </script>
+    </head>
+    <body>
+        <div id="output"></div>
+    </body>
+</html>
